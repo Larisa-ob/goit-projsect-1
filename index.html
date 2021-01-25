@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title lang="en">WebStudio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css"
+        />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <main></main>
+        <!---footer-->
+        <footer class="logo-footer">
+            <div class="container">
+                <div class="container-footer-adress">
+                    <a class="logo-text-footer" href="WebStudio"
+                        ><span class="web">Web</span>Studio</a
+                    >
+                    <address class="footer-adress">
+                        <a class="text-footer" href=""
+                            >г. Киев, пр-т Леси Украинки, 26</a
+                        >
+                    </address>
+                    <address class="footer-adress">
+                        <a
+                            class="text-footer-link"
+                            href="melto:info@example.com"
+                            >info@example.com</a
+                        >
+                    </address>
+                    <address class="footer-adress">
+                        <a class="text-footer-link" href="tel:+380991111111"
+                            >+38 099 111 11 11</a
+                        >
+                    </address>
+                </div>
+                <div class="div-text-footer">
+                    <b>присоединяйтесь</b>
+                    <div class="container-social">
+                        <ul class="social list">
+                            <li class="container-sosial-item">
+                                <a
+                                    class="container-sosial-comand-link"
+                                    href="instagram"
+                                    aria-label="ссылка на instagram"
+                                >
+                                    <svg class="container-sosial-item-svg">
+                                        <use
+                                            href="./images/symbol-defs.svg#icon-instagram"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="container-sosial-item">
+                                <a
+                                    class="container-sosial-comand-link"
+                                    href="twitter"
+                                    aria-label="ссылка на twitter"
+                                >
+                                    <svg class="container-sosial-item-svg">
+                                        <use
+                                            href="./images/symbol-defs.svg#icon-twitter"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="container-sosial-item">
+                                <a
+                                    class="container-sosial-comand-link"
+                                    href="facebook"
+                                    aria-label="ссылка на facebook"
+                                    ><svg class="container-sosial-item-svg">
+                                        <use
+                                            href="./images/symbol-defs.svg#icon-facebook"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="container-sosial-item">
+                                <a
+                                    class="container-sosial-comand-link"
+                                    href="linkedin"
+                                    aria-label="ссылка на linkedin"
+                                    ><svg class="container-sosial-item-svg">
+                                        <use
+                                            href="./images/symbol-defs.svg#icon-linkedin"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <form class="div-text-mail">
+                    <b>подпишитесь на рассылку</b>
+                    <div class="div-text-footer-write">
+                        <form class="footer-mail-write" autocomplete="off">
+                            <input
+                                type="email"
+                                name="user-mail"
+                                class="footer-mail"
+                                id="user-mail"
+                                placeholder="E-mail*"
+                                required
+                            />
+                            <label
+                                for="user-mail"
+                                class="contact-form-label"
+                            ></label>
+                            <button type="submit" class="footer-button primary">
+                                Подписаться
+                            </button>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </footer>
+        <!-- Модальное окно-->
+        <div data-modal class="backdrop is-hidden">
+            <form class="modal-form" name="my-form">
+                <h2 class="modal-form-title">
+                    Оставьте свои данные,мы вам перезвоним
+                </h2>
+                <button
+                    data-modal-close
+                    type="button"
+                    class="modal-close-btn"
+                ></button>
+                <div class="modal-form-input-wrapper">
+                    <input
+                        type="text"
+                        name="user-name"
+                        id="user-modal-name"
+                        class="modal-form-input"
+                        placeholder=" "
+                        required
+                    />
+                    <label class="modal-form-label" for="user-modal-name"
+                        >Имя*</label
+                    >
+                    <svg class="icon-modal" width="12px" height="12px">
+                        <use href="./images/symbol-defs.svg#person-black"></use>
+                    </svg>
+                </div>
+                <div class="modal-form-input-wrapper">
+                    <input
+                        type="tel"
+                        name="user-tel"
+                        id="user-modal-tel"
+                        class="modal-form-input"
+                        placeholder=" "
+                        required
+                    />
+                    <label for="user-modal-tel" class="modal-form-label"
+                        >Телефон*</label
+                    >
+                    <svg class="icon-modal" width="18px" height="18px">
+                        <use href="./images/symbol-defs.svg#phone-black"></use>
+                    </svg>
+                </div>
+                <div class="modal-form-input-wrapper">
+                    <input
+                        type="email"
+                        name="user-meil"
+                        id="user-modal-mail"
+                        class="modal-form-input"
+                        placeholder=" "
+                        required
+                    />
+                    <label for="user-modal-mail" class="modal-form-label"
+                        >E-mail*</label
+                    >
+                    <svg class="icon-modal" width="18px" height="18px">
+                        <use href="./images/symbol-defs.svg#mail-modal"></use>
+                    </svg>
+                </div>
+                <div class="modal-form-input-wrapper">
+                    <textarea
+                        name="user-message"
+                        id="modal-massange-label"
+                        class="modal-form-message"
+                        placeholder=" "
+                    ></textarea>
+                    <label
+                        for="modal-massange-label"
+                        class="modal-massange-label"
+                        >Комментарий</label
+                    >
+                </div>
+                <label class="modal-form-checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="policy"
+                        value="accept-policy"
+                        class="modal-form-checkbox"
+                        required
+                    />
+                    <span class="modal-form-custom-checkbox"></span>
+                    <span class="modal-form-checkbox-label-span"
+                        >Соглашаюсь с рассылкой и принимаю
+                        <a href="#">Условия договора</a></span
+                    >
+                </label>
+                <button type="submit" class="modal-form-btn">Отправить</button>
+            </form>
+        </div>
+        <script src="./js/menu.js"></script>
+        <script src="./js/modal.js"></script>
+    </body>
+</html>
