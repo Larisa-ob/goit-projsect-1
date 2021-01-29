@@ -1,41 +1,47 @@
-import studentItems from './students-item';
+import studentItems from './students-item.js';
+
 const refs = {
-    studentsItem: document.querySelector('.open-modal'),
-    gallery: document.querySelector('.js-students'),
-    modalInput: document.querySelector('.lightbox'),
-    backdropRef: document.querySelector('.lightbox__overlay'),
-    largeImage: document.querySelector("img[class='lightbox__image']"),
-    backmodal: document.querySelector('.lightbox__button'),
+    openStudentsModal: document.querySelector('.open-modal-develop'),
+    containerStudents: document.querySelector('.container_students'),
+    galleryItem: document.querySelector('.gallery__item_students'),
+    gallery: document.querySelector('.js-gallery-students'),
+    modalInput: document.querySelector('.lightbox_students'),
+    backdropRef: document.querySelector('.lightbox_students__overlay'),
+    largeImage: document.querySelector("img[class='lightbox_students__image']"),
 };
-refs.studentsItem.addEventListener('click', onGoITstudentClick);
+refs.openStudentsModal.addEventListener('click', onGoITstudentClick);
 const arrayStudent = [...studentItems];
+
+// Создаем заголовок и вставим его в container перед списком
+const heading = document.createElement('h1');
+heading.textContent = 'Наша команда';
+heading.classList.add('section-title2');
+refs.gallery.before(heading);
+
+/*Создаем галлерею студентов*/
+const elementGalleryRef = arrayStudent =>
+    arrayStudent.forEach(element => {
+        const nameStudents = document.createElement('h3');
+        nameStudents.classList.add('section-title-comand');
+        nameStudents.textContent = element.fullname;
+        /* создаем img класса gallery__image */
+        const img = document.createElement('img');
+        img.classList.add('gallery_students__image');
+        img.src = element.foto;
+        refs.gallery.append(img);
+        /* создаем єлемент li   */
+        const student = document.createElement('li');
+        student.classList.add('gallery__item_students');
+        student.appendChild(img);
+        student.appendChild(nameStudents);
+        refs.gallery.append(student);
+    });
+elementGalleryRef(arrayStudent);
 
 function onGoITstudentClick(event) {
     event.preventDefault();
-    refs.backmodal.addEventListener('click', onBackModalClick);
     refs.backdropRef.addEventListener('click', onBackModalClick);
     window.addEventListener('keydown', onPressEscape);
-    /*Создаем галлерею студентов*/
-    const elementGalleryRef = arrayStudent =>
-        arrayStudent.forEach(element => {
-            /* создаем img класса gallery__image */
-            const img = document.createElement('img');
-            img.classList.add('gallery__image');
-            img.src = element.foto;
-            img.setAttribute('data-source', element.original);
-            img.alt = element.fullname;
-            /*  создаем ссылку А класса  gallery__link*/
-            const link = document.createElement('a');
-            link.classList.add('gallery__link');
-            link.href = element.original;
-            link.appendChild(img);
-            /* создаем єлемент li    */
-            const list = document.createElement('li');
-            list.classList.add('gallery__item');
-            list.appendChild(link);
-            refs.gallery.append(list);
-        });
-    elementGalleryRef(arrayStudent);
 
     if (event.target.nodeName !== 'IMG') {
         return;
@@ -54,9 +60,11 @@ function onCloseModal() {
     refs.backmodal.removeEventListener('click', onBackModalClick);
     refs.backdropRef.removeEventListener('click', onBackModalClick);
     refs.modalInput.classList.remove('is-open');
-    getLargeImageSrc();
 }
-
+function getLargeImageSrc() {
+    const refmodal = refs.largeImage;
+    refmodal.src = '';
+}
 /* Функция 'клика на кнопку закрытия или оверлей*/
 function onBackModalClick(event) {
     if (event.target === event.currentTarget) {
