@@ -380,16 +380,6 @@ img {
   align-items: center;
   justify-content: space-between;
   background-color: #f5f4fa;
-  /*   display: grid;
-    width: 1200px;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-auto-rows: 240px;
-    grid-gap: 12px;
-    padding: 0;
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    @at-root;*/
 }
 
 .gallery-students p {
@@ -430,7 +420,7 @@ img {
 
 @media screen and (min-width: 1200px) {
   .gallery__item_students {
-    margin: 0px;
+    width: calc((100% - 30px) / 3);
   }
 }
 

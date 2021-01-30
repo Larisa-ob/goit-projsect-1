@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+           <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />      
+        <title>MY STUIDENTS_MODAL</title>
+    </head>
+    <body>
+        <footer class="footer" id="footer">
+            <div class="block">
+                <p class="text">&#169; 2020 | All Rights Reserved |</p>
+                <div class="mob-container">
+                    <p class="develop-text">Developed with</p>
+                    <svg width="14" height="12.88" class="heart-svg">
+                        <use href="#"></use>
+                    </svg>
+                    <a class="open-modal-develop" href="#">by GoIT Students</a>
+                </div>
+            </div>
+        </footer>    
+<!--Модальное окно-->
+<form id="modal_students">
+        <div class="container_students">
+            <ul class="gallery-students js-gallery-students"></ul>
+        </div>
+</form>               <!--Модальное окно для полноразмерного изображения Для того чтобы открыть,
+        необходимо добавить на div.lightbox CSS-класс is-open -->
+              
+            <div class="lightbox_students js-lightbox"></div> 
+            <!--<div class="lightbox_students__overlay"></div> -->         
+            <button
+                type="button"
+                class="lightbox__button"
+                data-action="close-lightbox"
+            ></button>
+        </div>
+       <!-- <script src="./js/students-item.js" type="module"></script>
+        <script src="./js/students-modal.js" type="module"></script>-->
+    </body>
+</html>
