@@ -1,4 +1,5 @@
 import studentItems from './students-item.js';
+
 const refs = {
   openStudentsModal: document.querySelector('.open-modal-develop'),
   containerStudents: document.querySelector('.container_students'),
@@ -10,11 +11,6 @@ const refs = {
 };
 refs.openStudentsModal.addEventListener('click', onGoITstudentClick);
 const arrayStudent = [...studentItems];
-/* Создаем заголовок и вставим его в container перед списком*/
-const heading = document.createElement('h1');
-heading.textContent = 'Наша команда';
-heading.classList.add('section-title2');
-refs.gallery.before(heading);
 
 /*Создаем галлерею студентов*/
 const elementGalleryStudents = arrayStudent =>
@@ -36,7 +32,13 @@ const elementGalleryStudents = arrayStudent =>
   });
 function onGoITstudentClick(event) {
   event.preventDefault();
-  /*refs.backdropRef.addEventListener('click', onBackModalClick);*/
+  /* Создаем заголовок и вставим его в container перед списком*/
+  const heading = document.createElement('h1');
+  heading.textContent = 'Наша команда';
+  heading.classList.add('section-title2');
+  refs.gallery.before(heading);
+
+  refs.backdropRef.addEventListener('click', onBackModalClick);
   window.addEventListener('keydown', onPressEscape);
   elementGalleryStudents(arrayStudent);
   /*добавляем класс на div[class=lightbox*/
@@ -48,13 +50,15 @@ function onGoITstudentClick(event) {
 function onCloseModal(event) {
   console.log(event.target.children[1]);
   window.removeEventListener('keydown', onPressEscape);
-  /* refs.backmodal.removeEventListener('click', onBackModalClick);
-    refs.backdropRef.removeEventListener('click', onBackModalClick);*/
+  refs.backmodal.removeEventListener('click', onBackModalClick);
+  refs.backdropRef.removeEventListener('click', onBackModalClick);
   refs.modalInput.classList.remove('is-open');
+  document.getElementById('modal_students').reset();
 }
 /* Функция 'клика на кнопку закрытия или оверлей*/
 function onBackModalClick(event) {
   if (event.target === event.currentTarget) {
+    console.log(event.target);
     onCloseModal();
   }
 }

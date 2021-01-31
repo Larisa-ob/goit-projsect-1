@@ -1,10 +1,10 @@
 export default [
   {
-    foto: './student_modal/pic.jpg',
+    foto: '../images/student_modal/.jpg',
     fullname: 'Oksana Cherepanova',
   },
   {
-    foto: '../src/images/student_modal/pic_2.jpg',
+    foto: '../images/student_modal/pic_2.jpg',
     fullname: 'Arkadii Basovych',
   },
   {
